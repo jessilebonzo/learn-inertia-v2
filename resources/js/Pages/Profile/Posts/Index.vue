@@ -1,12 +1,18 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head, Link, router, useForm } from '@inertiajs/vue3';
+import { Head, Link, router, useForm, usePoll } from '@inertiajs/vue3';
 
 defineProps({
-    posts: Object,
-    can: Object,
+    posts: {
+        type: Object,
+        required: true,
+    },
+    can: {
+        type: Object,
+    },
 });
 
+// usePoll(3000);
 
 const form = useForm('StorePost', {
     body: "",
